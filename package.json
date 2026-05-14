@@ -1,0 +1,27 @@
+{
+  "name": "ci_cd-lab",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/vistoynovictor/commitAcademy-Lab-CI-CD#readme",
+  "bugs": {
+    "url": "https://github.com/vistoynovictor/commitAcademy-Lab-CI-CD/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vistoynovictor/commitAcademy-Lab-CI-CD.git"
+  },
+  "license": "ISC",
+  "author": "Víctor Fernández",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.mjs",
+    "lint": "eslint .",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.39.4",
+    "globals": "^17.6.0"
+  }
+}

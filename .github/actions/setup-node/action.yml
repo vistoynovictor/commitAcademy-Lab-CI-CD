@@ -1,0 +1,16 @@
+name: Setup Node
+description: Sets up Node.js environment
+inputs:
+  node-version:
+    required: true
+    description: Node.js version to install (e.g., '18', '20', '20.x')
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v6
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: 'npm'
+    - run: npm ci
+      shell: bash

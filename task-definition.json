@@ -1,0 +1,29 @@
+{
+  "family": "ci-cd-lab-task",
+  "networkMode": "awsvpc",
+  "cpu": "512",
+  "memory": "1024",
+  "requiresCompatibilities": ["FARGATE"],
+  "containerDefinitions": [
+    {
+      "name": "ci-cd-lab",
+      "image": "<ECR_IMAGE_URI>",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/ci-cd-lab",
+          "awslogs-region": "{{aws_region}}",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "essential": true
+    }
+  ]
+}
