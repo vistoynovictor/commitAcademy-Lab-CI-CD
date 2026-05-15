@@ -6,7 +6,7 @@
   "requiresCompatibilities": ["EC2"],
   "containerDefinitions": [
     {
-      "name": "ci-cd-lab",
+      "name": "gh-container",
       "image": "<ECR_IMAGE_URI>",
       "portMappings": [
         {
