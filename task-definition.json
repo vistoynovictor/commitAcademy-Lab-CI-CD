@@ -4,6 +4,7 @@
   "cpu": "512",
   "memory": "1024",
   "requiresCompatibilities": ["FARGATE"],
+  "executionRoleArn": "<ECS_EXECUTION_ROLE_ARN>",
   "containerDefinitions": [
     {
       "name": "ci-cd-lab",
