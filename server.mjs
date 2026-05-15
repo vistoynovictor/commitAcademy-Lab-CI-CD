@@ -15,7 +15,7 @@ const handler = (req, res) => {
 };
 
 if (process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop())) {
-  http.createServer(handler).listen(3000, () => {
+  http.createServer(handler).listen(80, () => {
     console.log('Server running at http://localhost:3000/');
   });
 }
