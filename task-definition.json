@@ -15,9 +15,6 @@
           "protocol": "tcp"
         }
       ],
-      "logConfiguration": {
-        "logDriver": "json-file"
-      },
       "essential": true
     }
   ]
