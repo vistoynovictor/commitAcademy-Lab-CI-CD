@@ -1,6 +1,6 @@
 {
   "family": "ci-cd-lab-task",
-  "networkMode": "awsvpc",
+  "networkMode": "bridge",
   "cpu": "512",
   "memory": "1024",
   "requiresCompatibilities": ["EC2"],
