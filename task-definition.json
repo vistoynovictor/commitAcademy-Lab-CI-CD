@@ -4,7 +4,6 @@
   "cpu": "512",
   "memory": "1024",
   "requiresCompatibilities": ["FARGATE"],
-  "executionRoleArn": "<ECS_EXECUTION_ROLE_ARN>",
   "containerDefinitions": [
     {
       "name": "ci-cd-lab",
@@ -17,12 +16,7 @@
         }
       ],
       "logConfiguration": {
-        "logDriver": "awslogs",
-        "options": {
-          "awslogs-group": "/ecs/ci-cd-lab",
-          "awslogs-region": "{{aws_region}}",
-          "awslogs-stream-prefix": "ecs"
-        }
+        "logDriver": "json-file"
       },
       "essential": true
     }
