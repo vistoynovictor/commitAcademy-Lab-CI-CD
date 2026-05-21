@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: "22"
           cache: npm
-      - run: npm test
+      - run: npm ci && npm test
 
   build-and-push:
     needs: [static, test]
