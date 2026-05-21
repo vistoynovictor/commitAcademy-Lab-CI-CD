@@ -3,7 +3,9 @@
   "networkMode": "bridge",
   "cpu": "512",
   "memory": "1024",
-  "requiresCompatibilities": ["EC2"],
+  "requiresCompatibilities": [
+    "EC2"
+  ],
   "containerDefinitions": [
     {
       "name": "gh-container",
