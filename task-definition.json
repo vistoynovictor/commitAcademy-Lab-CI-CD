@@ -6,7 +6,7 @@
   "requiresCompatibilities": [
     "FARGATE"
   ],
-  "executionRoleArn": "arn:aws:iam::402631430447:role/studentEcsTaskExecutionRole",
+  "executionRoleArn": "<EXECUTION_ROLE_ARN>",
   "containerDefinitions": [
     {
       "name": "gh-container",

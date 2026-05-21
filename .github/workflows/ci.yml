@@ -81,7 +81,7 @@ jobs:
 
       - name: Substitute placeholders in task definition
         run: |
-          sed -i "s|<AWS_REGION>|${{ secrets.AWS_REGION }}|g" task-definition.json
+          sed -i "s|<AWS_REGION>|${{ secrets.AWS_REGION }}|g; s|<EXECUTION_ROLE_ARN>|${{ secrets.ECS_EXECUTION_ROLE_ARN }}|g" task-definition.json
 
       - name: Render task definition
         id: render-task-definition
