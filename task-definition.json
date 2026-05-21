@@ -2,7 +2,7 @@
   "family": "ci-cd-lab-task",
   "networkMode": "bridge",
   "cpu": "512",
-  "memory": "1024",
+  "memory": "256",
   "requiresCompatibilities": [
     "EC2"
   ],
@@ -17,7 +17,15 @@
           "protocol": "tcp"
         }
       ],
-      "essential": true
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/ci-cd-lab",
+          "awslogs-region": "<AWS_REGION>",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
     }
   ]
 }

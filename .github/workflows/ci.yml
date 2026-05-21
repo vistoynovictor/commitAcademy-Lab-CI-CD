@@ -79,6 +79,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Substitute placeholders in task definition
+        run: |
+          sed -i "s|<AWS_REGION>|${{ secrets.AWS_REGION }}|g" task-definition.json
+
       - name: Render task definition
         id: render-task-definition
         uses: aws-actions/amazon-ecs-render-task-definition@v1
