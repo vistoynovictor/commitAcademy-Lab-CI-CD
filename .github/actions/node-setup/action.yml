@@ -1,0 +1,12 @@
+name: 'Setup Node.js environment'
+description: 'Checkout, install Node 22 and restore dependencies'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-node@v6
+      with:
+        node-version: '22'
+        cache: npm
+    - run: npm ci
+      shell: bash

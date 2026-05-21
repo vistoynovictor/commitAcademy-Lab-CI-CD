@@ -16,25 +16,18 @@ jobs:
   static:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: "22"
-          cache: npm
+      - uses: ./.github/actions/node-setup
       - name: SCA (npm audit)
-        run: npm ci && npm run audit
+        run: npm run audit
       - name: Lintting (npm lint)
-        run: npm ci && npm run lint
+        run: npm run lint
 
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: "22"
-          cache: npm
-      - run: npm ci && npm test
+      - uses: ./.github/actions/node-setup
+      - name: Unit Tests (node --test)
+        run: npm test
 
   build-and-push:
     needs: [static, test]
