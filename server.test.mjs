@@ -27,21 +27,21 @@ describe('GET /<name>', () => {
     const res = mockRes();
     handler({ method: 'GET', url: '/Alice' }, res);
     assert.strictEqual(res.getStatus(), 200);
-    assert.strictEqual(res.getData().message, '👋 Hello, Alice!');
+    assert.strictEqual(res.getData().message, 'Hello, Alice! 🙇‍♂');
   });
 
   it('returns Hello, Bob!', () => {
     const res = mockRes();
     handler({ method: 'GET', url: '/Bob' }, res);
     assert.strictEqual(res.getStatus(), 200);
-    assert.strictEqual(res.getData().message, '👋 Hello, Bob!');
+    assert.strictEqual(res.getData().message, 'Hello, Bob! 🙇‍♂');
   });
 
   it('handles URL-encoded names', () => {
     const res = mockRes();
     handler({ method: 'GET', url: '/John%20Doe' }, res);
     assert.strictEqual(res.getStatus(), 200);
-    assert.strictEqual(res.getData().message, '👋 Hello, John Doe!');
+    assert.strictEqual(res.getData().message, 'Hello, John Doe! 🙇‍♂');
   });
 
   it('returns Hello, unknown!', () => {
