@@ -48,7 +48,7 @@ describe('GET /<name>', () => {
     const res = mockRes();
     handler({ method: 'GET', url: '/unknown' }, res);
     assert.strictEqual(res.getStatus(), 200);
-    assert.strictEqual(res.getData().message, '👋 Hello, unknown!');
+    assert.strictEqual(res.getData().message, 'Hello, unknown! 🙇‍♂');
   });
 });
 
