@@ -18,7 +18,7 @@ const handler = (req, res) => {
     logger.info({ method: 'GET', url: '/', statusCode: 200, duration: Date.now() - start }, 'request completed');
   } else if (req.method === 'GET' && req.url.startsWith('/')) {
     const name = decodeURIComponent(req.url.slice(1));
-    send(200, { message: `👋 Hello, ${name}!` });
+    send(200, { message: `Hello, ${name}! 🙇‍♂` });
     logger.info({ method: 'GET', url: req.url, statusCode: 200, duration: Date.now() - start }, 'request completed');
   } else {
     send(404, { error: 'Not Found' });
